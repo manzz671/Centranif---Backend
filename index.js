@@ -23,7 +23,7 @@ app.get("/scripts/scriptone", async(c) => {
 })
 
 app.get("/", async(c) => {
-  let res = await fetch("https://centranif-backend.mnzz.workers.dev/scripts/scriptone")
+  let res = await fetch("https://raw.githubusercontent.com/manzz671/Clash-Of-Centranif.web/refs/heads/main/index.html")
   let result = await res.text()
   return c.html(result)
 })
