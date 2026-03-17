@@ -13,8 +13,19 @@ let mainPage = async() => {
   return result;
 }
 
+app.get("/scripts/scriptone", async() => {
+  let url = "https://raw.githubusercontent.com/manzz671/Clash-Of-Centranif.web/refs/heads/main/scripts/script.js"
+  let res = await fetch(url, {method: "GET"})
+  let result = await res.text()
+  return c.text(result, 200, {
+    "Content-Type": "application/javascript"
+  })
+})
+
 app.get("/", async(c) => {
-  return c.html(await mainPage())
+  let res = await fetch("./scripts/scriptone")
+  let result = await res.text()
+  return c.html(await result)
 })
 
 export default app;
