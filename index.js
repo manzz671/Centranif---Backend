@@ -25,7 +25,7 @@ app.get("/scripts/scriptone", async(c) => {
 app.get("/", async(c) => {
   let res = await fetch("/scripts/scriptone", {method: "GET"})
   let result = await res.text()
-  return c.html(await result)
+  return c.html(result)
 })
 
 export default app;
