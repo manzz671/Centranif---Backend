@@ -23,7 +23,7 @@ app.get("/scripts/scriptone", async(c) => {
 })
 
 app.get("/", async(c) => {
-  let res = await fetch("https://centranif-backend.mnzz.workers.dev/scripts/scriptone", {method: "GET"})
+  let res = await fetch("https://centranif-backend.mnzz.workers.dev/scripts/scriptone")
   let result = await res.text()
   return c.html(result)
 })
